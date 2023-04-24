@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VehicleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::group(['prefix' => 'vehicles'],function (){
+    Route::get('/{id}',[VehicleController::class,'getVehicle']);
+});
 
 Route::get('/', function () {
     return view('welcome');
