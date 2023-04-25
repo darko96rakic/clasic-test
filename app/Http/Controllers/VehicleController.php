@@ -35,7 +35,7 @@ class VehicleController extends Controller
         } catch (\Exception $e) {
             Log::error($e->getMessage());
 
-            return response('Item not found!');
+            abort(404);
         }
     }
 }
